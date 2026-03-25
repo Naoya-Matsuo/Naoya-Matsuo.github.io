@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ステータス — 松尾直哉の冒険</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="page-wrapper">
+
+  <header class="dq-header">
+    <h1 class="dq-title">なおや の 冒険</h1>
+    <p class="dq-subtitle">NAOYA MATSUO &nbsp;/&nbsp; AI ENGINEER &amp; RESEARCHER &nbsp;/&nbsp; BASEBALL PLAYER</p>
+  </header>
+
+  <div class="dq-cols">
+
+    <!-- Command Menu -->
+    <nav class="dq-win dq-nav">
+      <div class="dq-win-title">&#x25BC; COMMAND</div>
+      <ul>
+        <li><a href="index.html">ぼうけんのきろく</a></li>
+        <li><a href="about.html" class="active">ステータス</a></li>
+        <li><a href="award.html">ぎのう・かつどう</a></li>
+        <li><a href="contact.html">れんらく</a></li>
+      </ul>
+    </nav>
+
+    <!-- Character Status -->
+    <div class="dq-win">
+      <div class="dq-win-title">&#x2605; ステータス — CHARACTER STATUS</div>
+      <div class="status-top">
+        <div class="status-portrait">
+          <img src="img/self.jpg" alt="Naoya Matsuo" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="status-stats">
+          <div class="stat-row">
+            <span class="stat-label">なまえ</span>
+            <span class="stat-val">松尾 直哉</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">しょくぎょう</span>
+            <span class="stat-val">データまほうつかい・せんし</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">きょてん</span>
+            <span class="stat-val">にほん</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">かいしゃ</span>
+            <span class="stat-val">日本IBM Systems Engineering</span>
+          </div>
+          <hr class="dq-sep">
+          <div class="stat-row">
+            <span class="stat-label">ちから</span>
+            <span class="stars">&#x2605;&#x2605;&#x2605;&#x2605;</span><span class="stars-empty">&#x2605;</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">ちしき</span>
+            <span class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">すばやさ</span>
+            <span class="stars">&#x2605;&#x2605;&#x2605;&#x2605;</span><span class="stars-empty">&#x2605;</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">うんのよさ</span>
+            <span class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Educational Background -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F393; がっこう — EDUCATIONAL BACKGROUND</div>
+    <div class="history-item">
+      <span class="h-year">2017</span>
+      <span>洛南高等学校 卒業</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2019</span>
+      <span>北海道大学 工学部 情報エレクトロニクス学科 入学</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2023</span>
+      <span>北海道大学 工学部 情報エレクトロニクス学科 生体情報コース 卒業</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2023</span>
+      <span>京都大学大学院 生命科学研究科 高次生命科学専攻 入学</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2025</span>
+      <span>京都大学大学院 生命科学研究科 高次生命科学専攻 卒業</span>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F4BC; けいけん — WORK EXPERIENCE</div>
+    <div class="history-item">
+      <span class="h-year">2023.4</span>
+      <span>株式会社アラヤ（研究補助）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2024.2</span>
+      <span>株式会社アソビュー（フロントエンドエンジニア インターン）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2025.4</span>
+      <span>日本IBM Systems Engineering  ( AI Enginner , Researcher )</span>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x2694; ぶき・ぎのう — SKILLS &amp; QUALIFICATIONS</div>
+    <div class="history-item" style="flex-wrap:wrap; gap:8px 16px;">
+      <span class="h-year">資格</span>
+      <div>
+        <ul class="skill-tags">
+          <li>IBM ML Specialist - Associate</li>
+          <li>IBM ML Specialist - Professional</li>
+          <li>IBM ML Specialist - Advanced</li>
+          <li>柔道 初段</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="dq-sep">
+    <div class="history-item" style="flex-wrap:wrap; gap:8px 16px;">
+      <span class="h-year">言語</span>
+      <div>
+        <ul class="skill-tags">
+          <li>Python</li>
+          <li>JavaScript / TypeScript</li>
+          <li>R</li>
+          <li>C</li>
+          <li>Unity</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="dq-sep">
+    <div class="history-item" style="flex-wrap:wrap; gap:8px 16px;">
+      <span class="h-year">ML/AI</span>
+      <div>
+        <ul class="skill-tags">
+          <li>PyTorch</li>
+          <li>YOLO</li>
+          <li>Transformers</li>
+          <li>LangChain , LangGraph</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baseball -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x26BE; パーティ — BASEBALL TEAMS</div>
+    <div class="history-item">
+      <span class="h-year">2019-21</span>
+      <span>北海道大学ソフトボール部（北海道札幌市）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2021-22</span>
+      <span>ニューバファロー（北海道札幌市）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2023</span>
+      <span>京都城陽ファイヤーバーズ（京都府城陽市）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2023-25</span>
+      <span>大阪スターズ（大阪府茨木市）</span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2025-</span>
+      <span>船橋オーシャンズ（千葉県船橋市）</span>
+    </div>
+  </section>
+
+  <footer class="dq-footer">
+    &copy; 2025 &nbsp; NAOYA MATSUO &nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

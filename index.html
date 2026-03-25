@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>なおやの冒険</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="page-wrapper">
+
+  <!-- ===== TITLE ===== -->
+  <header class="dq-header">
+    <h1 class="dq-title">なおや の 冒険</h1>
+    <p class="dq-subtitle">NAOYA MATSUO &nbsp;/&nbsp; AI ENGINEER &amp; RESEARCHER &nbsp;/&nbsp; BASEBALL PLAYER</p>
+  </header>
+
+  <!-- ===== MAIN: nav + message ===== -->
+  <div class="dq-cols">
+
+    <!-- Command Menu -->
+    <nav class="dq-win dq-nav">
+      <div class="dq-win-title">&#x25BC; COMMAND</div>
+      <ul>
+        <li><a href="index.html" class="active">ぼうけんのきろく</a></li>
+        <li><a href="about.html">ステータス</a></li>
+        <li><a href="award.html">ぎのう・かつどう</a></li>
+        <li><a href="contact.html">れんらく</a></li>
+      </ul>
+    </nav>
+
+    <!-- Welcome message -->
+    <div class="dq-win msg-window">
+      <div class="dq-win-title">&#x2605; ものがたり</div>
+      <p id="msg1"></p>
+      <p id="msg2" style="margin-top:12px;"></p>
+    </div>
+
+  </div>
+
+  <!-- ===== ADVENTURE LOG ===== -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F4DC; ぼうけんのきろく &nbsp;— RECENT NEWS</div>
+    <ul class="adv-log">
+      <li>
+        <span class="log-date">2026 / 06</span>
+        人工知能学会全国大会で「Context-Aware Basketball Highlight Generation」を発表した！
+      </li>
+      <li>
+        <span class="log-date">2026 / 03</span>
+        第4回 Agentic AI Hackathon with Google Cloud で奨励賞を受賞した！
+      </li>
+      <li>
+        <span class="log-date">2025 / 04</span>
+        日本IBM Systems Engineeringに入社した！
+      </li>
+      <li>
+        <span class="log-date">2025 / 03</span>
+        京都大学大学院 生命科学研究科 高次生命科学専攻を卒業した！
+      </li>
+      <li>
+        <span class="log-date">2025 / 01</span>
+        <a href="https://zenn.dev/maoya23/articles/47be090aec141a" target="_blank">Zenn</a>にYOLOを使った骨格推定の記事を投稿した！
+      </li>
+      <li>
+        <span class="log-date">2024 / 11</span>
+        <a href="https://eriseginishida.wixsite.com/aneurogenesis2024" target="_blank">第21回成体脳のニューロン新生懇談会</a>において「Young Investigator Award」を受賞した！
+      </li>
+      <li>
+        <span class="log-date">2024 / 10</span>
+        <a href="https://www.softbankhawks.co.jp/news/detail/202400637726.html" target="_blank">SoftBankHawksのデータサイエンス業務体験会</a>に参加した！
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== ZENN ARTICLES ===== -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F4D6; まほうのしょ &nbsp;— ZENN ARTICLES</div>
+    <div id="zenn-articles">
+      <p style="color:var(--dq-cyan); font-size:0.85rem;">ロード中...</p>
+    </div>
+  </section>
+
+  <footer class="dq-footer">
+    &copy; 2025 &nbsp; NAOYA MATSUO &nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  /* ===== Zenn articles ===== */
+  (async function () {
+    const container = document.getElementById('zenn-articles');
+    try {
+      const res = await fetch('./zenn_articles.json');
+      if (!res.ok) throw new Error('fetch error');
+      const { articles } = await res.json();
+      const top5 = articles.slice(0, 5);
+
+      container.innerHTML = top5.map(function (a) {
+        const date = a.published_at
+          ? a.published_at.slice(0, 10).replace(/-/g, ' / ')
+          : '';
+        const url = 'https://zenn.dev/maoya23/articles/' + a.slug;
+        const likes = a.liked_count || 0;
+        const type = a.article_type === 'tech' ? 'TECH' : 'IDEA';
+        return (
+          '<div class="zenn-card">' +
+            '<div class="zenn-card-top">' +
+              '<span class="zenn-emoji">' + (a.emoji || '&#x1F4DD;') + '</span>' +
+              '<div class="zenn-meta">' +
+                '<span class="zenn-type ' + (a.article_type === 'tech' ? 'type-tech' : 'type-idea') + '">' + type + '</span>' +
+                '<span class="zenn-date">' + date + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<a class="zenn-title" href="' + url + '" target="_blank">' + a.title + '</a>' +
+            '<div class="zenn-likes">&#x2665; ' + likes + '</div>' +
+          '</div>'
+        );
+      }).join('');
+    } catch (e) {
+      container.innerHTML =
+        '<p style="font-size:0.85rem;">記事の読み込みに失敗しました。' +
+        '<a href="https://zenn.dev/maoya23" target="_blank" style="color:var(--dq-gold);">Zennで確認する</a></p>';
+    }
+  })();
+
+  typewriterAll([
+    {
+      sel: '#msg1',
+      text: 'ようこそ、旅人よ。ここは松尾直哉のポートフォリオへ。',
+      speed: 55,
+      pause: 400,
+    },
+    {
+      sel: '#msg2',
+      text: 'データサイエンティストにして野球選手。彼のぼうけんのきろくをひもといてみよう。',
+      speed: 45,
+    },
+  ]);
+</script>
+
+</body>
+</html>

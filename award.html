@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ぎのう・かつどう — 松尾直哉の冒険</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="page-wrapper">
+
+  <header class="dq-header">
+    <h1 class="dq-title">なおや の 冒険</h1>
+    <p class="dq-subtitle">NAOYA MATSUO &nbsp;/&nbsp; AI ENGINEER &amp; RESEARCHER &nbsp;/&nbsp; BASEBALL PLAYER</p>
+  </header>
+
+  <div class="dq-cols">
+
+    <!-- Command Menu -->
+    <nav class="dq-win dq-nav">
+      <div class="dq-win-title">&#x25BC; COMMAND</div>
+      <ul>
+        <li><a href="index.html">ぼうけんのきろく</a></li>
+        <li><a href="about.html">ステータス</a></li>
+        <li><a href="award.html" class="active">ぎのう・かつどう</a></li>
+        <li><a href="contact.html">れんらく</a></li>
+      </ul>
+    </nav>
+
+    <!-- Page intro -->
+    <div class="dq-win msg-window">
+      <div class="dq-win-title">&#x2605; ものがたり</div>
+      <p id="msg1"></p>
+    </div>
+
+  </div>
+
+  <!-- Awards -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F3C6; ほうびの おたから — AWARDS</div>
+    <div class="award-item">
+      <span class="award-icon">&#x1F947;</span>
+      <span>奨励賞 ( DIAMONDMIND )<br>
+        <small style="color:var(--dq-cyan);">第4回 Agentic AI Hackathon with Google Cloud</small>
+      </span>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">&#x1F947;</span>
+      <span>Young Investigator Award<br>
+        <small style="color:var(--dq-cyan);">第21回成体脳のニューロン新生懇談会（2024年11月 / 東京）</small>
+      </span>
+    </div>
+  </section>
+
+  <!-- Presentations -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F4E2; でんどう — PRESENTATIONS</div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.1 — 2022.09</div>
+      <p>松尾直哉、長田直樹、遠藤俊徳、「機械学習によるMarfan症候群の疾患原因遺伝子の候補の特定」<br>
+        <small style="color:var(--dq-cyan);">日本遺伝学会（北海道札幌市）</small>
+      </p>
+    </div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.2 — 2024.03</div>
+      <p>Naoya Matsuo, Yusuke Suzuki, Itaru Imayoshi,<br>
+        "Investigating the affinity between neurogenesis and deep-learning architecture"<br>
+        <small style="color:var(--dq-cyan);">21st BioStudies Symposium（Kyoto City）</small>
+      </p>
+    </div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.3 — 2024.11</div>
+      <p>松尾直哉、鈴木祐輔、今吉格、「スパイキングニューラルネットワークによる神経新生の再現とパターン認識への影響の検証の試み」<br>
+        <small style="color:var(--dq-cyan);">第21回神経新生懇談会（東京都葛飾区）</small>
+      </p>
+    </div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.4 — 2024.11</div>
+      <p>Naoya Matsuo, Yusuke Suzuki, Itaru Imayoshi,<br>
+        "Attempts to reproduce neurogenesis by Spiking Neural Network and to verify their impact on pattern recognition"<br>
+        <small style="color:var(--dq-cyan);">Kyoto University Interdisciplinary Neuroscience Symposium（Kyoto City）</small>
+      </p>
+    </div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.5 — 2025.03</div>
+      <p>Naoya Matsuo, Yusuke Suzuki, Itaru Imayoshi,<br>
+        "Attempts to reproduce neurogenesis by Spiking Neural Network and to verify their impact on pattern recognition"<br>
+        <small style="color:var(--dq-cyan);">Kyoto University Interdisciplinary Neuroscience Symposium（Kyoto City）</small>
+      </p>
+    </div>
+
+    <div class="quest-item">
+      <div class="quest-num">NO.6 — 2026.06</div>
+      <p>Naoya Matsuo, Toshiaki Sota, Kaede Shindo, Yosuke Inoue,<br>
+        "Context-Aware Basketball Highlight Generation using Large Video-Language Models and Hierarchical Feature Extraction"<br>
+        <small style="color:var(--dq-cyan);">2026年度 人工知能学会全国大会</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- Competitions -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x26BE; たたかい の きろく — SOFTBALL COMPETITIONS</div>
+    <div class="history-item" style="border-bottom:none; padding:0; display:block;">
+      <ul class="adv-log">
+        <li><span class="log-date">全国大会</span>全日本大学選手権大会（ソフトボール）× 2回出場</li>
+        <li><span class="log-date">全国大会</span>国民体育大会（ソフトボール）</li>
+        <li><span class="log-date">全国大会</span>全日本総合男子選手権大会（ソフトボール）</li>
+        <li><span class="log-date">全国大会</span>全日本クラブ選手権大会（ソフトボール）</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- International Activities -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F30D; こくさい かつどう — INTERNATIONAL ACTIVITIES</div>
+    <div class="history-item">
+      <span class="h-year">2023</span>
+      <span>Data Science Summer School 2023<br>
+        <small style="color:var(--dq-cyan);">Georg-August-Universität Göttingen, Germany</small>
+      </span>
+    </div>
+    <div class="history-item">
+      <span class="h-year">2024</span>
+      <span>HeKKSaGOn &amp; GP-DS International Summer School on Data Science 2024<br>
+        <small style="color:var(--dq-cyan);">Tohoku University, Miyagi, Japan</small>
+      </span>
+    </div>
+  </section>
+
+  <footer class="dq-footer">
+    &copy; 2025 &nbsp; NAOYA MATSUO &nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  typewriterAll([
+    {
+      sel: '#msg1',
+      text: '強敵を倒し、栄冠をつかんできた。その記録がここに刻まれている。',
+      speed: 50,
+    },
+  ]);
+</script>
+
+</body>
+</html>

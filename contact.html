@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>れんらく — 松尾直哉の冒険</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="page-wrapper">
+
+  <header class="dq-header">
+    <h1 class="dq-title">なおや の 冒険</h1>
+    <p class="dq-subtitle">NAOYA MATSUO &nbsp;/&nbsp; AI ENGINEER &amp; RESEARCHER &nbsp;/&nbsp; BASEBALL PLAYER</p>
+  </header>
+
+  <div class="dq-cols">
+
+    <!-- Command Menu -->
+    <nav class="dq-win dq-nav">
+      <div class="dq-win-title">&#x25BC; COMMAND</div>
+      <ul>
+        <li><a href="index.html">ぼうけんのきろく</a></li>
+        <li><a href="about.html">ステータス</a></li>
+        <li><a href="award.html">ぎのう・かつどう</a></li>
+        <li><a href="contact.html" class="active">れんらく</a></li>
+      </ul>
+    </nav>
+
+    <!-- NPC Dialogue -->
+    <div class="dq-win">
+      <div class="dq-win-title">&#x1F9D9; NPC のはなし</div>
+      <div class="npc-box">
+        <div class="npc-sprite">&#x1F9D9;&#x200D;&#x2642;&#xFE0F;</div>
+        <div class="npc-text">
+          <p id="msg1"></p>
+          <p id="msg2" style="margin-top:12px;"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact info -->
+  <section class="dq-win">
+    <div class="dq-win-title">&#x1F4E7; れんらくさき — CONTACT</div>
+    <ul class="contact-list">
+      <li>
+        <span class="c-icon">&#x1F4E7;</span>
+        <span>Email : matuo.naoya.l22@kyoto-u.jp</span>
+      </li>
+      <li>
+        <span class="c-icon">&#x1F517;</span>
+        <span>LinkedIn :
+          <a href="https://www.linkedin.com/in/naoya-matsuo-2513942a4/" target="_blank">
+            naoya-matsuo-2513942a4
+          </a>
+        </span>
+      </li>
+      <li>
+        <span class="c-icon">&#x1F4DD;</span>
+        <span>Zenn :
+          <a href="https://zenn.dev/maoya23" target="_blank">zenn.dev/maoya23</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="dq-footer">
+    &copy; 2025 &nbsp; NAOYA MATSUO &nbsp; ALL RIGHTS RESERVED
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  typewriterAll([
+    {
+      sel: '#msg1',
+      text: 'やあ、旅人よ。わしは連絡係の魔法使いじゃ。',
+      speed: 55,
+      pause: 500,
+    },
+    {
+      sel: '#msg2',
+      text: '下のれんらくさきから、なおやに話しかけることができるぞ。気軽に声をかけてくれ！',
+      speed: 45,
+    },
+  ]);
+</script>
+
+</body>
+</html>
