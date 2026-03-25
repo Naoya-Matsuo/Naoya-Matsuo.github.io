@@ -188,6 +188,10 @@ body {
 /* ===== Adventure log (news) ===== */
 .adv-log {
   list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dq-gold) transparent;
 }
 
 .adv-log li {
