@@ -1,3 +1,103 @@
+/* ===== BGM ===== */
+(function () {
+  const audio = document.getElementById('bgm');
+  if (!audio) return;
+
+  const btn = document.getElementById('bgm-toggle');
+  const isMuted = sessionStorage.getItem('bgm-muted') === 'true';
+
+  function updateBtn(muted) {
+    if (btn) btn.textContent = muted ? '♩ OFF' : '♪ ON';
+  }
+
+  if (isMuted) {
+    audio.pause();
+    updateBtn(true);
+  } else {
+    updateBtn(false);
+    const tryPlay = () => {
+      audio.play().catch(() => {});
+    };
+    tryPlay();
+    document.addEventListener('click', function onFirstClick() {
+      audio.play().catch(() => {});
+      document.removeEventListener('click', onFirstClick);
+    }, { once: true });
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        sessionStorage.setItem('bgm-muted', 'false');
+        updateBtn(false);
+      } else {
+        audio.pause();
+        sessionStorage.setItem('bgm-muted', 'true');
+        updateBtn(true);
+      }
+    });
+  }
+})();
+
+/* ===== Scroll to Top ===== */
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+  document.body.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== PJAX Navigation ===== */
+(function () {
+  function runPageScripts(doc) {
+    // 取得したページのインラインscriptを再実行（src指定なし、かつscript.js以外）
+    Array.from(doc.querySelectorAll('body script')).forEach(function (s) {
+      if (s.src) return;
+      var el = document.createElement('script');
+      el.textContent = s.textContent;
+      document.body.appendChild(el);
+      document.body.removeChild(el);
+    });
+  }
+
+  function loadPage(url) {
+    fetch(url)
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        var newWrapper = doc.querySelector('.page-wrapper');
+        var curWrapper = document.querySelector('.page-wrapper');
+        if (!newWrapper || !curWrapper) return;
+
+        curWrapper.innerHTML = newWrapper.innerHTML;
+        document.title = doc.title;
+        window.scrollTo(0, 0);
+        runPageScripts(doc);
+      });
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href) return;
+    // 外部リンク・アンカー・非HTMLはスキップ
+    if (href.indexOf('://') !== -1 || href.charAt(0) === '#') return;
+    if (href.slice(-5) !== '.html') return;
+
+    e.preventDefault();
+    history.pushState(null, '', href);
+    loadPage(href);
+  });
+
+  window.addEventListener('popstate', function () {
+    var page = location.pathname.split('/').pop() || 'index.html';
+    loadPage(page);
+  });
+})();
+
 /* ===== Starfield ===== */
 (function () {
   const canvas = document.getElementById('stars-canvas');
