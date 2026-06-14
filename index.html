@@ -11,8 +11,6 @@
 
 <canvas id="stars-canvas"></canvas>
 
-<audio id="bgm" src="8bit-maou-kessen.mp3" loop></audio>
-<button id="bgm-toggle">♪ ON</button>
 
 <div class="page-wrapper">
 
@@ -83,8 +81,10 @@
   <!-- ===== ZENN ARTICLES ===== -->
   <section class="dq-win">
     <div class="dq-win-title">&#x1F4D6; まほうのしょ &nbsp;— ZENN ARTICLES</div>
-    <div id="zenn-articles">
-      <p style="color:var(--dq-cyan); font-size:0.85rem;">ロード中...</p>
+    <div class="zenn-articles-scroll">
+      <div id="zenn-articles">
+        <p style="color:var(--dq-cyan); font-size:0.85rem;">ロード中...</p>
+      </div>
     </div>
   </section>
 
@@ -107,9 +107,7 @@
       const res = await fetch('./zenn_articles.json');
       if (!res.ok) throw new Error('fetch error');
       const { articles } = await res.json();
-      const top5 = articles.slice(0, 5);
-
-      container.innerHTML = top5.map(function (a) {
+      container.innerHTML = articles.map(function (a) {
         const date = a.published_at
           ? a.published_at.slice(0, 10).replace(/-/g, ' / ')
           : '';
