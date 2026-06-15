@@ -17,7 +17,7 @@ jobs:
 
       - name: Fetch latest Zenn articles
         run: |
-          curl -s "https://zenn.dev/api/articles?username=maoya23&order=latest&count=5" \
+          curl -s "https://zenn.dev/api/articles?username=maoya23&order=latest&count=100" \
             -o zenn_articles.json
 
       - name: Commit if changed
